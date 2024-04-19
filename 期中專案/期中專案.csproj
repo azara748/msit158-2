@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{695D5357-DCFA-4A5A-9952-FCC1C66BC61B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>期中專案</RootNamespace>
+    <AssemblyName>期中專案</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>5</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bag.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Box.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Card.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit Card.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credit Card.designer.cs">
+      <DependentUpon>Credit Card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FieldBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FieldBox.Designer.cs">
+      <DependentUpon>FieldBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmActive.Designer.cs">
+      <DependentUpon>FrmActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPayWay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPayWay.designer.cs">
+      <DependentUpon>FrmPayWay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegister.Designer.cs">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectDetail.designer.cs">
+      <DependentUpon>FrmSelectDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectTheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectTheme.designer.cs">
+      <DependentUpon>FrmSelectTheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSpecialProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSpecialProduct.Designer.cs">
+      <DependentUpon>FrmSpecialProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiftPackageStyle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialColor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="packageMaterial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PayBox.designer.cs">
+      <DependentUpon>PayBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tActive.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tAgency.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tAllPackage.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tAppraisal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tCart.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tCategory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tCity.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tDepartment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tDistributor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tDistrict.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tEmployee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tEnterprise.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tEventLog.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tKeyword.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tLabel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tMember.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tOrder.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tOrder_temp.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tPackageWayDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tPay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tPayType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tProdAppearance.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tProduct.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tPurchase.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tReview.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tSale.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tStatu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tSubCategory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\imageText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\imageText.designer.cs">
+      <DependentUpon>imageText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="修改基本資料.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="修改基本資料.Designer.cs">
+      <DependentUpon>修改基本資料.cs</DependentUpon>
+    </Compile>
+    <Compile Include="包裝紀錄.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="包裝紀錄.Designer.cs">
+      <DependentUpon>包裝紀錄.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品評價.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="商品評價.Designer.cs">
+      <DependentUpon>商品評價.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品詳細.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品詳細.Designer.cs">
+      <DependentUpon>商品詳細.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品預覽.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="商品預覽.Designer.cs">
+      <DependentUpon>商品預覽.cs</DependentUpon>
+    </Compile>
+    <Compile Include="大圖.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="大圖.Designer.cs">
+      <DependentUpon>大圖.cs</DependentUpon>
+    </Compile>
+    <Compile Include="訂單詳細內容.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="訂單詳細內容.Designer.cs">
+      <DependentUpon>訂單詳細內容.cs</DependentUpon>
+    </Compile>
+    <Compile Include="新增商品.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="新增商品.Designer.cs">
+      <DependentUpon>新增商品.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品資訊格式.cs" />
+    <Compile Include="會員資料.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員資料.Designer.cs">
+      <DependentUpon>會員資料.cs</DependentUpon>
+    </Compile>
+    <Compile Include="訂單詳細.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="訂單詳細.Designer.cs">
+      <DependentUpon>訂單詳細.cs</DependentUpon>
+    </Compile>
+    <Compile Include="訂單預覽.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="訂單預覽.Designer.cs">
+      <DependentUpon>訂單預覽.cs</DependentUpon>
+    </Compile>
+    <Compile Include="評分頁.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="評分頁.Designer.cs">
+      <DependentUpon>評分頁.cs</DependentUpon>
+    </Compile>
+    <Compile Include="購物車包裝.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="購物車包裝.Designer.cs">
+      <DependentUpon>購物車包裝.cs</DependentUpon>
+    </Compile>
+    <Compile Include="購物車頁.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="購物車頁.Designer.cs">
+      <DependentUpon>購物車頁.cs</DependentUpon>
+    </Compile>
+    <Compile Include="購物車預覽.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="購物車預覽.Designer.cs">
+      <DependentUpon>購物車預覽.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="首頁.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="首頁.Designer.cs">
+      <DependentUpon>首頁.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Credit Card.resx">
+      <DependentUpon>Credit Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FieldBox.resx">
+      <DependentUpon>FieldBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmActive.resx">
+      <DependentUpon>FrmActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPayWay.resx">
+      <DependentUpon>FrmPayWay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegister.resx">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectDetail.resx">
+      <DependentUpon>FrmSelectDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectTheme.resx">
+      <DependentUpon>FrmSelectTheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSpecialProduct.resx">
+      <DependentUpon>FrmSpecialProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayBox.resx">
+      <DependentUpon>PayBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\imageText.resx">
+      <DependentUpon>imageText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="修改基本資料.resx">
+      <DependentUpon>修改基本資料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="包裝紀錄.resx">
+      <DependentUpon>包裝紀錄.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品評價.resx">
+      <DependentUpon>商品評價.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品詳細.resx">
+      <DependentUpon>商品詳細.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品預覽.resx">
+      <DependentUpon>商品預覽.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="大圖.resx">
+      <DependentUpon>大圖.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="新增商品.resx">
+      <DependentUpon>新增商品.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員資料.resx">
+      <DependentUpon>會員資料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="訂單詳細.resx">
+      <DependentUpon>訂單詳細.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="訂單詳細內容.resx">
+      <DependentUpon>訂單詳細內容.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="訂單預覽.resx">
+      <DependentUpon>訂單預覽.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="評分頁.resx">
+      <DependentUpon>評分頁.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="購物車包裝.resx">
+      <DependentUpon>購物車包裝.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="購物車頁.resx">
+      <DependentUpon>購物車頁.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="購物車預覽.resx">
+      <DependentUpon>購物車預覽.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="首頁.resx">
+      <DependentUpon>首頁.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\392531_account_friend_human_man_member_icon.jpg" />
+    <None Include="Resources\abc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
