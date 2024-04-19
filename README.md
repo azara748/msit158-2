@@ -1,1 +1,1 @@
-<img src="https://usagif.com/wp-content/uploads/cat-typing-22.gif"/>
+<img src="https://media.tenor.com/FYsjyvi3C7kAAAAi/rupert-cat.gif"/>
