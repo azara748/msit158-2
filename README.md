@@ -1,1 +1,1 @@
-<img src="https://img.gifmagazine.net/gifmagazine/images/3312857/original.mp4"/>
+<img src="https://usagif.com/wp-content/uploads/cat-typing-22.gif"/>
