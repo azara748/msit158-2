@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SelectShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bags">
           <Key>
             <PropertyRef Name="BagID" />
@@ -80,16 +80,6 @@
           <Property Name="ColorID" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="tActive">
           <Key>
             <PropertyRef Name="ActiveID" />
@@ -151,7 +141,7 @@
           <Property Name="CategoryCName" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'SelectShop.dbo.tCity' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\DATE網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.tCity' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
         <EntityType Name="tCity">
           <Key>
             <PropertyRef Name="CityID" />
@@ -310,7 +300,7 @@
           <Property Name="PayTypeImagePath" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'SelectShop.dbo.tProdAppearance' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\DATE網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.tProdAppearance' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
         <EntityType Name="tProdAppearance">
           <Key>
             <PropertyRef Name="PAppearanceID" />
@@ -385,7 +375,7 @@
           <Property Name="CategoryID" Type="int" />
         </EntityType>
         <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'SelectShop.dbo.PRODUCT_TOP4_SALES' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+警告 6013: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\DATE網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.PRODUCT_TOP4_SALES' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
         <EntityType Name="PRODUCT_TOP4_SALES">
           <Property Name="ProductID" Type="int" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="200" />
@@ -394,7 +384,7 @@
           <Property Name="SalesMonth" Type="int" />
         </EntityType>-->
         <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'SelectShop.dbo.PRODUCT_TOTAL_SALES' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+警告 6013: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\DATE網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.PRODUCT_TOTAL_SALES' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
         <EntityType Name="PRODUCT_TOTAL_SALES">
           <Property Name="ProductID" Type="int" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="200" />
@@ -812,38 +802,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <EntityContainer Name="SelectShopModelStoreContainer">
+        <EntityContainer Name="Database1ModelStoreContainer">
           <EntitySet Name="Bags" EntityType="Self.Bags" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Boxes" EntityType="Self.Boxes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cards" EntityType="Self.Cards" Schema="dbo" store:Type="Tables" />
@@ -851,7 +810,6 @@
           <EntitySet Name="GiftPackageStyle" EntityType="Self.GiftPackageStyle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaterialColor" EntityType="Self.MaterialColor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="packageMaterial" EntityType="Self.packageMaterial" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tActive" EntityType="Self.tActive" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tAgency" EntityType="Self.tAgency" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tAllPackage" EntityType="Self.tAllPackage" Schema="dbo" store:Type="Tables" />
@@ -1034,7 +992,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="SelectShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Bag">
           <Key>
             <PropertyRef Name="BagID" />
@@ -1124,16 +1082,6 @@
           <NavigationProperty Name="Boxes" Relationship="Self.FK_Boxes_packageMaterial1" FromRole="packageMaterial" ToRole="Boxes" />
           <NavigationProperty Name="MaterialColor" Relationship="Self.FK_packageMaterial_MaterialColor" FromRole="packageMaterial" ToRole="MaterialColor" />
           <NavigationProperty Name="tAllPackages" Relationship="Self.FK_tAllPackage_packageMaterial" FromRole="packageMaterial" ToRole="tAllPackage" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="tActive">
           <Key>
@@ -1894,7 +1842,6 @@
           <EntitySet Name="GiftPackageStyles" EntityType="Self.GiftPackageStyle" />
           <EntitySet Name="MaterialColors" EntityType="Self.MaterialColor" />
           <EntitySet Name="packageMaterials" EntityType="Self.packageMaterial" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="tActives" EntityType="Self.tActive" />
           <EntitySet Name="tAgencies" EntityType="Self.tAgency" />
           <EntitySet Name="tAllPackages" EntityType="Self.tAllPackage" />
@@ -2059,56 +2006,15 @@
             <End Role="tProduct" EntitySet="tProducts" />
             <End Role="tReview" EntitySet="tReviews" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SelectShopModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SelectShopModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SelectShopModelStoreContainer" CdmEntityContainer="SelectShopEntities">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="SelectShopEntities">
           <EntitySetMapping Name="Bags">
-            <EntityTypeMapping TypeName="SelectShopModel.Bag">
+            <EntityTypeMapping TypeName="Database1Model.Bag">
               <MappingFragment StoreEntitySet="Bags">
                 <ScalarProperty Name="BagID" ColumnName="BagID" />
                 <ScalarProperty Name="BagType" ColumnName="BagType" />
@@ -2123,7 +2029,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Boxes">
-            <EntityTypeMapping TypeName="SelectShopModel.Box">
+            <EntityTypeMapping TypeName="Database1Model.Box">
               <MappingFragment StoreEntitySet="Boxes">
                 <ScalarProperty Name="BoxID" ColumnName="BoxID" />
                 <ScalarProperty Name="BoxType" ColumnName="BoxType" />
@@ -2138,7 +2044,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cards">
-            <EntityTypeMapping TypeName="SelectShopModel.Card">
+            <EntityTypeMapping TypeName="Database1Model.Card">
               <MappingFragment StoreEntitySet="Cards">
                 <ScalarProperty Name="CardID" ColumnName="CardID" />
                 <ScalarProperty Name="CardType" ColumnName="CardType" />
@@ -2151,7 +2057,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cities">
-            <EntityTypeMapping TypeName="SelectShopModel.City">
+            <EntityTypeMapping TypeName="Database1Model.City">
               <MappingFragment StoreEntitySet="City">
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="CityName" ColumnName="CityName" />
@@ -2159,7 +2065,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GiftPackageStyles">
-            <EntityTypeMapping TypeName="SelectShopModel.GiftPackageStyle">
+            <EntityTypeMapping TypeName="Database1Model.GiftPackageStyle">
               <MappingFragment StoreEntitySet="GiftPackageStyle">
                 <ScalarProperty Name="PStlyeID" ColumnName="PStlyeID" />
                 <ScalarProperty Name="StyleName" ColumnName="StyleName" />
@@ -2169,7 +2075,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MaterialColors">
-            <EntityTypeMapping TypeName="SelectShopModel.MaterialColor">
+            <EntityTypeMapping TypeName="Database1Model.MaterialColor">
               <MappingFragment StoreEntitySet="MaterialColor">
                 <ScalarProperty Name="ColorID" ColumnName="ColorID" />
                 <ScalarProperty Name="ColorName" ColumnName="ColorName" />
@@ -2179,7 +2085,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="packageMaterials">
-            <EntityTypeMapping TypeName="SelectShopModel.packageMaterial">
+            <EntityTypeMapping TypeName="Database1Model.packageMaterial">
               <MappingFragment StoreEntitySet="packageMaterial">
                 <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
                 <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
@@ -2189,19 +2095,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="SelectShopModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tActives">
-            <EntityTypeMapping TypeName="SelectShopModel.tActive">
+            <EntityTypeMapping TypeName="Database1Model.tActive">
               <MappingFragment StoreEntitySet="tActive">
                 <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
                 <ScalarProperty Name="ActiveName" ColumnName="ActiveName" />
@@ -2214,7 +2109,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tAgencies">
-            <EntityTypeMapping TypeName="SelectShopModel.tAgency">
+            <EntityTypeMapping TypeName="Database1Model.tAgency">
               <MappingFragment StoreEntitySet="tAgency">
                 <ScalarProperty Name="AgencyID" ColumnName="AgencyID" />
                 <ScalarProperty Name="AgencyName" ColumnName="AgencyName" />
@@ -2226,7 +2121,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tAllPackages">
-            <EntityTypeMapping TypeName="SelectShopModel.tAllPackage">
+            <EntityTypeMapping TypeName="Database1Model.tAllPackage">
               <MappingFragment StoreEntitySet="tAllPackage">
                 <ScalarProperty Name="PackageID" ColumnName="PackageID" />
                 <ScalarProperty Name="PackName" ColumnName="PackName" />
@@ -2239,7 +2134,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tAppraisals">
-            <EntityTypeMapping TypeName="SelectShopModel.tAppraisal">
+            <EntityTypeMapping TypeName="Database1Model.tAppraisal">
               <MappingFragment StoreEntitySet="tAppraisal">
                 <ScalarProperty Name="RankID" ColumnName="RankID" />
                 <ScalarProperty Name="Rank" ColumnName="Rank" />
@@ -2247,7 +2142,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tCarts">
-            <EntityTypeMapping TypeName="SelectShopModel.tCart">
+            <EntityTypeMapping TypeName="Database1Model.tCart">
               <MappingFragment StoreEntitySet="tCart">
                 <ScalarProperty Name="CartID" ColumnName="CartID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
@@ -2258,7 +2153,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tCategories">
-            <EntityTypeMapping TypeName="SelectShopModel.tCategory">
+            <EntityTypeMapping TypeName="Database1Model.tCategory">
               <MappingFragment StoreEntitySet="tCategory">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -2267,7 +2162,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tDepartments">
-            <EntityTypeMapping TypeName="SelectShopModel.tDepartment">
+            <EntityTypeMapping TypeName="Database1Model.tDepartment">
               <MappingFragment StoreEntitySet="tDepartment">
                 <ScalarProperty Name="DepID" ColumnName="DepID" />
                 <ScalarProperty Name="DepName" ColumnName="DepName" />
@@ -2275,7 +2170,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tDistributors">
-            <EntityTypeMapping TypeName="SelectShopModel.tDistributor">
+            <EntityTypeMapping TypeName="Database1Model.tDistributor">
               <MappingFragment StoreEntitySet="tDistributor">
                 <ScalarProperty Name="DistributorID" ColumnName="DistributorID" />
                 <ScalarProperty Name="DistributorName" ColumnName="DistributorName" />
@@ -2287,7 +2182,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tDistricts">
-            <EntityTypeMapping TypeName="SelectShopModel.tDistrict">
+            <EntityTypeMapping TypeName="Database1Model.tDistrict">
               <MappingFragment StoreEntitySet="tDistrict">
                 <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
                 <ScalarProperty Name="DistrictNamt" ColumnName="DistrictNamt" />
@@ -2296,7 +2191,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tEmployees">
-            <EntityTypeMapping TypeName="SelectShopModel.tEmployee">
+            <EntityTypeMapping TypeName="Database1Model.tEmployee">
               <MappingFragment StoreEntitySet="tEmployee">
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
@@ -2312,7 +2207,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tEnterprises">
-            <EntityTypeMapping TypeName="SelectShopModel.tEnterprise">
+            <EntityTypeMapping TypeName="Database1Model.tEnterprise">
               <MappingFragment StoreEntitySet="tEnterprise">
                 <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
                 <ScalarProperty Name="EnterpriseName" ColumnName="EnterpriseName" />
@@ -2322,7 +2217,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tEventLogs">
-            <EntityTypeMapping TypeName="SelectShopModel.tEventLog">
+            <EntityTypeMapping TypeName="Database1Model.tEventLog">
               <MappingFragment StoreEntitySet="tEventLog">
                 <ScalarProperty Name="EventID" ColumnName="EventID" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
@@ -2333,7 +2228,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tKeywords">
-            <EntityTypeMapping TypeName="SelectShopModel.tKeyword">
+            <EntityTypeMapping TypeName="Database1Model.tKeyword">
               <MappingFragment StoreEntitySet="tKeyword">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="TagID" ColumnName="TagID" />
@@ -2345,7 +2240,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tLabels">
-            <EntityTypeMapping TypeName="SelectShopModel.tLabel">
+            <EntityTypeMapping TypeName="Database1Model.tLabel">
               <MappingFragment StoreEntitySet="tLabel">
                 <ScalarProperty Name="LabelID" ColumnName="LabelID" />
                 <ScalarProperty Name="LabelName" ColumnName="LabelName" />
@@ -2356,7 +2251,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tMembers">
-            <EntityTypeMapping TypeName="SelectShopModel.tMember">
+            <EntityTypeMapping TypeName="Database1Model.tMember">
               <MappingFragment StoreEntitySet="tMember">
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="MemberName" ColumnName="MemberName" />
@@ -2374,7 +2269,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tOrders">
-            <EntityTypeMapping TypeName="SelectShopModel.tOrder">
+            <EntityTypeMapping TypeName="Database1Model.tOrder">
               <MappingFragment StoreEntitySet="tOrder">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="GUI" ColumnName="GUI" />
@@ -2387,7 +2282,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tOrder_temp">
-            <EntityTypeMapping TypeName="SelectShopModel.tOrder_temp">
+            <EntityTypeMapping TypeName="Database1Model.tOrder_temp">
               <MappingFragment StoreEntitySet="tOrder_temp">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="GUI" ColumnName="GUI" />
@@ -2400,7 +2295,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tPackageWayDetails">
-            <EntityTypeMapping TypeName="SelectShopModel.tPackageWayDetail">
+            <EntityTypeMapping TypeName="Database1Model.tPackageWayDetail">
               <MappingFragment StoreEntitySet="tPackageWayDetail">
                 <ScalarProperty Name="PackageWayDetailID" ColumnName="PackageWayDetailID" />
                 <ScalarProperty Name="PackageID" ColumnName="PackageID" />
@@ -2410,7 +2305,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tPays">
-            <EntityTypeMapping TypeName="SelectShopModel.tPay">
+            <EntityTypeMapping TypeName="Database1Model.tPay">
               <MappingFragment StoreEntitySet="tPay">
                 <ScalarProperty Name="PayID" ColumnName="PayID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
@@ -2420,7 +2315,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tPayTypes">
-            <EntityTypeMapping TypeName="SelectShopModel.tPayType">
+            <EntityTypeMapping TypeName="Database1Model.tPayType">
               <MappingFragment StoreEntitySet="tPayType">
                 <ScalarProperty Name="PayTypeID" ColumnName="PayTypeID" />
                 <ScalarProperty Name="PayKind" ColumnName="PayKind" />
@@ -2431,7 +2326,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tProducts">
-            <EntityTypeMapping TypeName="SelectShopModel.tProduct">
+            <EntityTypeMapping TypeName="Database1Model.tProduct">
               <MappingFragment StoreEntitySet="tProduct">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
@@ -2448,7 +2343,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tPurchases">
-            <EntityTypeMapping TypeName="SelectShopModel.tPurchase">
+            <EntityTypeMapping TypeName="Database1Model.tPurchase">
               <MappingFragment StoreEntitySet="tPurchase">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -2459,7 +2354,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tReviews">
-            <EntityTypeMapping TypeName="SelectShopModel.tReview">
+            <EntityTypeMapping TypeName="Database1Model.tReview">
               <MappingFragment StoreEntitySet="tReview">
                 <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
@@ -2472,7 +2367,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tSales">
-            <EntityTypeMapping TypeName="SelectShopModel.tSale">
+            <EntityTypeMapping TypeName="Database1Model.tSale">
               <MappingFragment StoreEntitySet="tSales">
                 <ScalarProperty Name="SalesID" ColumnName="SalesID" />
                 <ScalarProperty Name="LabelID" ColumnName="LabelID" />
@@ -2482,7 +2377,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tStatus">
-            <EntityTypeMapping TypeName="SelectShopModel.tStatu">
+            <EntityTypeMapping TypeName="Database1Model.tStatu">
               <MappingFragment StoreEntitySet="tStatus">
                 <ScalarProperty Name="StatusID" ColumnName="StatusID" />
                 <ScalarProperty Name="StatusName" ColumnName="StatusName" />
@@ -2490,7 +2385,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tSubCategories">
-            <EntityTypeMapping TypeName="SelectShopModel.tSubCategory">
+            <EntityTypeMapping TypeName="Database1Model.tSubCategory">
               <MappingFragment StoreEntitySet="tSubCategory">
                 <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
                 <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
@@ -2500,7 +2395,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tCities">
-            <EntityTypeMapping TypeName="SelectShopModel.tCity">
+            <EntityTypeMapping TypeName="Database1Model.tCity">
               <MappingFragment StoreEntitySet="tCity">
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="CityName" ColumnName="CityName" />
@@ -2508,7 +2403,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tProdAppearances">
-            <EntityTypeMapping TypeName="SelectShopModel.tProdAppearance">
+            <EntityTypeMapping TypeName="Database1Model.tProdAppearance">
               <MappingFragment StoreEntitySet="tProdAppearance">
                 <ScalarProperty Name="PAppearanceID" ColumnName="PAppearanceID" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
@@ -2518,30 +2413,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SelectShopModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SelectShopModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SelectShopModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SelectShopModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SelectShopModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SelectShopModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SelectShopModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SelectShopModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SelectShopModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

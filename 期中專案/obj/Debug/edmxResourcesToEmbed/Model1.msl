@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="SelectShopEntities">
+    <EntitySetMapping Name="Bags">
+      <EntityTypeMapping TypeName="Database1Model.Bag">
+        <MappingFragment StoreEntitySet="Bags">
+          <ScalarProperty Name="BagID" ColumnName="BagID" />
+          <ScalarProperty Name="BagType" ColumnName="BagType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="SuitableProductsID" ColumnName="SuitableProductsID" />
+          <ScalarProperty Name="PStlyeID" ColumnName="PStlyeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Boxes">
+      <EntityTypeMapping TypeName="Database1Model.Box">
+        <MappingFragment StoreEntitySet="Boxes">
+          <ScalarProperty Name="BoxID" ColumnName="BoxID" />
+          <ScalarProperty Name="BoxType" ColumnName="BoxType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="SuitableProductsID" ColumnName="SuitableProductsID" />
+          <ScalarProperty Name="PStlyeID" ColumnName="PStlyeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cards">
+      <EntityTypeMapping TypeName="Database1Model.Card">
+        <MappingFragment StoreEntitySet="Cards">
+          <ScalarProperty Name="CardID" ColumnName="CardID" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="SuitableProductsID" ColumnName="SuitableProductsID" />
+          <ScalarProperty Name="PStlyeID" ColumnName="PStlyeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="Database1Model.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiftPackageStyles">
+      <EntityTypeMapping TypeName="Database1Model.GiftPackageStyle">
+        <MappingFragment StoreEntitySet="GiftPackageStyle">
+          <ScalarProperty Name="PStlyeID" ColumnName="PStlyeID" />
+          <ScalarProperty Name="StyleName" ColumnName="StyleName" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaterialColors">
+      <EntityTypeMapping TypeName="Database1Model.MaterialColor">
+        <MappingFragment StoreEntitySet="MaterialColor">
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+          <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+          <ScalarProperty Name="RGB" ColumnName="RGB" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="packageMaterials">
+      <EntityTypeMapping TypeName="Database1Model.packageMaterial">
+        <MappingFragment StoreEntitySet="packageMaterial">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tActives">
+      <EntityTypeMapping TypeName="Database1Model.tActive">
+        <MappingFragment StoreEntitySet="tActive">
+          <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+          <ScalarProperty Name="ActiveName" ColumnName="ActiveName" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ActiveImage" ColumnName="ActiveImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tAgencies">
+      <EntityTypeMapping TypeName="Database1Model.tAgency">
+        <MappingFragment StoreEntitySet="tAgency">
+          <ScalarProperty Name="AgencyID" ColumnName="AgencyID" />
+          <ScalarProperty Name="AgencyName" ColumnName="AgencyName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tAllPackages">
+      <EntityTypeMapping TypeName="Database1Model.tAllPackage">
+        <MappingFragment StoreEntitySet="tAllPackage">
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="PackName" ColumnName="PackName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="PackageStyleID" ColumnName="PackageStyleID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tAppraisals">
+      <EntityTypeMapping TypeName="Database1Model.tAppraisal">
+        <MappingFragment StoreEntitySet="tAppraisal">
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tCarts">
+      <EntityTypeMapping TypeName="Database1Model.tCart">
+        <MappingFragment StoreEntitySet="tCart">
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Check" ColumnName="Check" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tCategories">
+      <EntityTypeMapping TypeName="Database1Model.tCategory">
+        <MappingFragment StoreEntitySet="tCategory">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryCName" ColumnName="CategoryCName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDepartments">
+      <EntityTypeMapping TypeName="Database1Model.tDepartment">
+        <MappingFragment StoreEntitySet="tDepartment">
+          <ScalarProperty Name="DepID" ColumnName="DepID" />
+          <ScalarProperty Name="DepName" ColumnName="DepName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDistributors">
+      <EntityTypeMapping TypeName="Database1Model.tDistributor">
+        <MappingFragment StoreEntitySet="tDistributor">
+          <ScalarProperty Name="DistributorID" ColumnName="DistributorID" />
+          <ScalarProperty Name="DistributorName" ColumnName="DistributorName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDistricts">
+      <EntityTypeMapping TypeName="Database1Model.tDistrict">
+        <MappingFragment StoreEntitySet="tDistrict">
+          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+          <ScalarProperty Name="DistrictNamt" ColumnName="DistrictNamt" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tEmployees">
+      <EntityTypeMapping TypeName="Database1Model.tEmployee">
+        <MappingFragment StoreEntitySet="tEmployee">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Cellphone" ColumnName="Cellphone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+          <ScalarProperty Name="EmployeePhoto" ColumnName="EmployeePhoto" />
+          <ScalarProperty Name="OnBoardDate" ColumnName="OnBoardDate" />
+          <ScalarProperty Name="DepID" ColumnName="DepID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tEnterprises">
+      <EntityTypeMapping TypeName="Database1Model.tEnterprise">
+        <MappingFragment StoreEntitySet="tEnterprise">
+          <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+          <ScalarProperty Name="EnterpriseName" ColumnName="EnterpriseName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tEventLogs">
+      <EntityTypeMapping TypeName="Database1Model.tEventLog">
+        <MappingFragment StoreEntitySet="tEventLog">
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="EventDateTime" ColumnName="EventDateTime" />
+          <ScalarProperty Name="EventBrief" ColumnName="EventBrief" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tKeywords">
+      <EntityTypeMapping TypeName="Database1Model.tKeyword">
+        <MappingFragment StoreEntitySet="tKeyword">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="TagID" ColumnName="TagID" />
+          <ScalarProperty Name="Festival" ColumnName="Festival" />
+          <ScalarProperty Name="Topic" ColumnName="Topic" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tLabels">
+      <EntityTypeMapping TypeName="Database1Model.tLabel">
+        <MappingFragment StoreEntitySet="tLabel">
+          <ScalarProperty Name="LabelID" ColumnName="LabelID" />
+          <ScalarProperty Name="LabelName" ColumnName="LabelName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SupplierPhoto" ColumnName="SupplierPhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tMembers">
+      <EntityTypeMapping TypeName="Database1Model.tMember">
+        <MappingFragment StoreEntitySet="tMember">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="Cellphone" ColumnName="Cellphone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="VIP" ColumnName="VIP" />
+          <ScalarProperty Name="MemberPhoto" ColumnName="MemberPhoto" />
+          <ScalarProperty Name="Wallet" ColumnName="Wallet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tOrders">
+      <EntityTypeMapping TypeName="Database1Model.tOrder">
+        <MappingFragment StoreEntitySet="tOrder">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="GUI" ColumnName="GUI" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="RecMemberID" ColumnName="RecMemberID" />
+          <ScalarProperty Name="Shipping" ColumnName="Shipping" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tOrder_temp">
+      <EntityTypeMapping TypeName="Database1Model.tOrder_temp">
+        <MappingFragment StoreEntitySet="tOrder_temp">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="GUI" ColumnName="GUI" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="RecMemberID" ColumnName="RecMemberID" />
+          <ScalarProperty Name="Shipping" ColumnName="Shipping" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPackageWayDetails">
+      <EntityTypeMapping TypeName="Database1Model.tPackageWayDetail">
+        <MappingFragment StoreEntitySet="tPackageWayDetail">
+          <ScalarProperty Name="PackageWayDetailID" ColumnName="PackageWayDetailID" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="PackQty" ColumnName="PackQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPays">
+      <EntityTypeMapping TypeName="Database1Model.tPay">
+        <MappingFragment StoreEntitySet="tPay">
+          <ScalarProperty Name="PayID" ColumnName="PayID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="PayTypeID" ColumnName="PayTypeID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPayTypes">
+      <EntityTypeMapping TypeName="Database1Model.tPayType">
+        <MappingFragment StoreEntitySet="tPayType">
+          <ScalarProperty Name="PayTypeID" ColumnName="PayTypeID" />
+          <ScalarProperty Name="PayKind" ColumnName="PayKind" />
+          <ScalarProperty Name="PayTypeNo" ColumnName="PayTypeNo" />
+          <ScalarProperty Name="PayTypeName" ColumnName="PayTypeName" />
+          <ScalarProperty Name="PayTypeImagePath" ColumnName="PayTypeImagePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tProducts">
+      <EntityTypeMapping TypeName="Database1Model.tProduct">
+        <MappingFragment StoreEntitySet="tProduct">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Stocks" ColumnName="Stocks" />
+          <ScalarProperty Name="LabelID" ColumnName="LabelID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="ProductPhoto" ColumnName="ProductPhoto" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+          <ScalarProperty Name="LaunchTime" ColumnName="LaunchTime" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPurchases">
+      <EntityTypeMapping TypeName="Database1Model.tPurchase">
+        <MappingFragment StoreEntitySet="tPurchase">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tReviews">
+      <EntityTypeMapping TypeName="Database1Model.tReview">
+        <MappingFragment StoreEntitySet="tReview">
+          <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="RankID" ColumnName="RankID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ReviewDate" ColumnName="ReviewDate" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tSales">
+      <EntityTypeMapping TypeName="Database1Model.tSale">
+        <MappingFragment StoreEntitySet="tSales">
+          <ScalarProperty Name="SalesID" ColumnName="SalesID" />
+          <ScalarProperty Name="LabelID" ColumnName="LabelID" />
+          <ScalarProperty Name="AgencyID" ColumnName="AgencyID" />
+          <ScalarProperty Name="DistribuatorID" ColumnName="DistribuatorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tStatus">
+      <EntityTypeMapping TypeName="Database1Model.tStatu">
+        <MappingFragment StoreEntitySet="tStatus">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tSubCategories">
+      <EntityTypeMapping TypeName="Database1Model.tSubCategory">
+        <MappingFragment StoreEntitySet="tSubCategory">
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+          <ScalarProperty Name="SubCategoryCName" ColumnName="SubCategoryCName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tCities">
+      <EntityTypeMapping TypeName="Database1Model.tCity">
+        <MappingFragment StoreEntitySet="tCity">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tProdAppearances">
+      <EntityTypeMapping TypeName="Database1Model.tProdAppearance">
+        <MappingFragment StoreEntitySet="tProdAppearance">
+          <ScalarProperty Name="PAppearanceID" ColumnName="PAppearanceID" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Shape" ColumnName="Shape" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,1017 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bag">
+    <Key>
+      <PropertyRef Name="BagID" />
+    </Key>
+    <Property Name="BagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BagType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Size" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MaterialID" Type="Int32" />
+    <Property Name="SuitableProductsID" Type="Int32" />
+    <Property Name="PStlyeID" Type="Int32" />
+    <NavigationProperty Name="GiftPackageStyle" Relationship="Self.FK_Bags_GiftPackageStyle1" FromRole="Bags" ToRole="GiftPackageStyle" />
+    <NavigationProperty Name="packageMaterial" Relationship="Self.FK_Bags_packageMaterial1" FromRole="Bags" ToRole="packageMaterial" />
+  </EntityType>
+  <EntityType Name="Box">
+    <Key>
+      <PropertyRef Name="BoxID" />
+    </Key>
+    <Property Name="BoxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BoxType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Size" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MaterialID" Type="Int32" />
+    <Property Name="SuitableProductsID" Type="Int32" />
+    <Property Name="PStlyeID" Type="Int32" />
+    <NavigationProperty Name="GiftPackageStyle" Relationship="Self.FK_Boxes_GiftPackageStyle1" FromRole="Boxes" ToRole="GiftPackageStyle" />
+    <NavigationProperty Name="packageMaterial" Relationship="Self.FK_Boxes_packageMaterial1" FromRole="Boxes" ToRole="packageMaterial" />
+  </EntityType>
+  <EntityType Name="Card">
+    <Key>
+      <PropertyRef Name="CardID" />
+    </Key>
+    <Property Name="CardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CardType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SuitableProductsID" Type="Int32" />
+    <Property Name="PStlyeID" Type="Int32" />
+    <NavigationProperty Name="GiftPackageStyle" Relationship="Self.FK_Cards_GiftPackageStyle1" FromRole="Cards" ToRole="GiftPackageStyle" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tDistricts" Relationship="Self.FK_tDistrict_City" FromRole="City" ToRole="tDistrict" />
+  </EntityType>
+  <EntityType Name="GiftPackageStyle">
+    <Key>
+      <PropertyRef Name="PStlyeID" />
+    </Key>
+    <Property Name="PStlyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StyleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bags" Relationship="Self.FK_Bags_GiftPackageStyle1" FromRole="GiftPackageStyle" ToRole="Bags" />
+    <NavigationProperty Name="Boxes" Relationship="Self.FK_Boxes_GiftPackageStyle1" FromRole="GiftPackageStyle" ToRole="Boxes" />
+    <NavigationProperty Name="Cards" Relationship="Self.FK_Cards_GiftPackageStyle1" FromRole="GiftPackageStyle" ToRole="Cards" />
+    <NavigationProperty Name="tAllPackages" Relationship="Self.FK_tAllPackage_GiftPackageStyle1" FromRole="GiftPackageStyle" ToRole="tAllPackage" />
+  </EntityType>
+  <EntityType Name="MaterialColor">
+    <Key>
+      <PropertyRef Name="ColorID" />
+    </Key>
+    <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ColorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RGB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="packageMaterials" Relationship="Self.FK_packageMaterial_MaterialColor" FromRole="MaterialColor" ToRole="packageMaterial" />
+  </EntityType>
+  <EntityType Name="packageMaterial">
+    <Key>
+      <PropertyRef Name="MaterialID" />
+    </Key>
+    <Property Name="MaterialID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaterialName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ColorID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bags" Relationship="Self.FK_Bags_packageMaterial1" FromRole="packageMaterial" ToRole="Bags" />
+    <NavigationProperty Name="Boxes" Relationship="Self.FK_Boxes_packageMaterial1" FromRole="packageMaterial" ToRole="Boxes" />
+    <NavigationProperty Name="MaterialColor" Relationship="Self.FK_packageMaterial_MaterialColor" FromRole="packageMaterial" ToRole="MaterialColor" />
+    <NavigationProperty Name="tAllPackages" Relationship="Self.FK_tAllPackage_packageMaterial" FromRole="packageMaterial" ToRole="tAllPackage" />
+  </EntityType>
+  <EntityType Name="tActive">
+    <Key>
+      <PropertyRef Name="ActiveID" />
+    </Key>
+    <Property Name="ActiveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActiveName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="Discount" Type="Decimal" Precision="3" Scale="2" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ActiveImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="tProducts" Relationship="Self.FK_tProduct_tActive" FromRole="tActive" ToRole="tProduct" />
+  </EntityType>
+  <EntityType Name="tAgency">
+    <Key>
+      <PropertyRef Name="AgencyID" />
+    </Key>
+    <Property Name="AgencyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgencyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="EnterpriseID" Type="Int32" />
+    <NavigationProperty Name="tEnterprise" Relationship="Self.FK_tAgency_tEnterprise" FromRole="tAgency" ToRole="tEnterprise" />
+    <NavigationProperty Name="tSales" Relationship="Self.FK_tSales_tAgency" FromRole="tAgency" ToRole="tSales" />
+  </EntityType>
+  <EntityType Name="tAllPackage">
+    <Key>
+      <PropertyRef Name="PackageID" />
+    </Key>
+    <Property Name="PackageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PackName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PackageStyleID" Type="Int32" />
+    <Property Name="TypeID" Type="Int32" />
+    <Property Name="MaterialID" Type="Int32" />
+    <NavigationProperty Name="GiftPackageStyle" Relationship="Self.FK_tAllPackage_GiftPackageStyle1" FromRole="tAllPackage" ToRole="GiftPackageStyle" />
+    <NavigationProperty Name="packageMaterial" Relationship="Self.FK_tAllPackage_packageMaterial" FromRole="tAllPackage" ToRole="packageMaterial" />
+    <NavigationProperty Name="tPackageWayDetails" Relationship="Self.FK_tPackageWayDetail_tAllPackage" FromRole="tAllPackage" ToRole="tPackageWayDetail" />
+  </EntityType>
+  <EntityType Name="tAppraisal">
+    <Key>
+      <PropertyRef Name="RankID" />
+    </Key>
+    <Property Name="RankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tReviews" Relationship="Self.FK_tReview_tAppraisal" FromRole="tAppraisal" ToRole="tReview" />
+  </EntityType>
+  <EntityType Name="tCart">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Check" Type="Boolean" />
+    <NavigationProperty Name="tMember" Relationship="Self.FK_tCart_tMember" FromRole="tCart" ToRole="tMember" />
+    <NavigationProperty Name="tProduct" Relationship="Self.FK_tCart_tProduct" FromRole="tCart" ToRole="tProduct" />
+  </EntityType>
+  <EntityType Name="tCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryCName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tSubCategories" Relationship="Self.FK_tSubCategory_tCategory" FromRole="tCategory" ToRole="tSubCategory" />
+  </EntityType>
+  <EntityType Name="tDepartment">
+    <Key>
+      <PropertyRef Name="DepID" />
+    </Key>
+    <Property Name="DepID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tEmployees" Relationship="Self.FK_tEmployee_Department" FromRole="tDepartment" ToRole="tEmployee" />
+  </EntityType>
+  <EntityType Name="tDistributor">
+    <Key>
+      <PropertyRef Name="DistributorID" />
+    </Key>
+    <Property Name="DistributorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistributorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="EnterpriseID" Type="Int32" />
+    <NavigationProperty Name="tEnterprise" Relationship="Self.FK_tDistributor_tEnterprise" FromRole="tDistributor" ToRole="tEnterprise" />
+    <NavigationProperty Name="tSales" Relationship="Self.FK_tSales_tDistributor" FromRole="tDistributor" ToRole="tSales" />
+  </EntityType>
+  <EntityType Name="tDistrict">
+    <Key>
+      <PropertyRef Name="DistrictID" />
+    </Key>
+    <Property Name="DistrictID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistrictNamt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityID" Type="Int32" />
+    <NavigationProperty Name="City" Relationship="Self.FK_tDistrict_City" FromRole="tDistrict" ToRole="City" />
+  </EntityType>
+  <EntityType Name="tEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="E_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeePhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="OnBoardDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DepID" Type="Int32" />
+    <NavigationProperty Name="tDepartment" Relationship="Self.FK_tEmployee_Department" FromRole="tEmployee" ToRole="tDepartment" />
+    <NavigationProperty Name="tEventLogs" Relationship="Self.FK_EventLog_tEmployee" FromRole="tEmployee" ToRole="tEventLog" />
+  </EntityType>
+  <EntityType Name="tEnterprise">
+    <Key>
+      <PropertyRef Name="EnterpriseID" />
+    </Key>
+    <Property Name="EnterpriseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EnterpriseName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tAgencies" Relationship="Self.FK_tAgency_tEnterprise" FromRole="tEnterprise" ToRole="tAgency" />
+    <NavigationProperty Name="tDistributors" Relationship="Self.FK_tDistributor_tEnterprise" FromRole="tEnterprise" ToRole="tDistributor" />
+  </EntityType>
+  <EntityType Name="tEventLog">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="EventDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EventBrief" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tEmployee" Relationship="Self.FK_EventLog_tEmployee" FromRole="tEventLog" ToRole="tEmployee" />
+  </EntityType>
+  <EntityType Name="tKeyword">
+    <Key>
+      <PropertyRef Name="TagID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="TagID" Type="Int32" Nullable="false" />
+    <Property Name="Festival" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Topic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tag" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tProduct" Relationship="Self.FK_tKeyword_tProduct" FromRole="tKeyword" ToRole="tProduct" />
+  </EntityType>
+  <EntityType Name="tLabel">
+    <Key>
+      <PropertyRef Name="LabelID" />
+    </Key>
+    <Property Name="LabelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LabelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="SupplierPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="tProduct" Relationship="Self.FK_tLabel_tProduct" FromRole="tLabel" ToRole="tProduct" />
+    <NavigationProperty Name="tSales" Relationship="Self.FK_tSales_tLabel" FromRole="tLabel" ToRole="tSales" />
+  </EntityType>
+  <EntityType Name="tMember">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="0" />
+    <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="E_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Points" Type="Int32" />
+    <Property Name="VIP" Type="Boolean" />
+    <Property Name="MemberPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Wallet" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="tCarts" Relationship="Self.FK_tCart_tMember" FromRole="tMember" ToRole="tCart" />
+    <NavigationProperty Name="tOrders" Relationship="Self.FK_tOrder_tMember" FromRole="tMember" ToRole="tOrder" />
+    <NavigationProperty Name="tReviews" Relationship="Self.FK_tReview_tMember" FromRole="tMember" ToRole="tReview" />
+  </EntityType>
+  <EntityType Name="tOrder">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GUI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="MemberID" Type="Int32" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="RecMemberID" Type="Int32" />
+    <Property Name="Shipping" Type="Int32" />
+    <NavigationProperty Name="tMember" Relationship="Self.FK_tOrder_tMember" FromRole="tOrder" ToRole="tMember" />
+    <NavigationProperty Name="tStatu" Relationship="Self.FK_tOrder_tStatus" FromRole="tOrder" ToRole="tStatus" />
+    <NavigationProperty Name="tPackageWayDetails" Relationship="Self.FK_tPackageWayDetail_tOrder" FromRole="tOrder" ToRole="tPackageWayDetail" />
+    <NavigationProperty Name="tPurchases" Relationship="Self.FK_tPurchase_tOrder" FromRole="tOrder" ToRole="tPurchase" />
+  </EntityType>
+  <EntityType Name="tOrder_temp">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GUI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="MemberID" Type="Int32" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="RecMemberID" Type="Int32" />
+    <Property Name="Shipping" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tPackageWayDetail">
+    <Key>
+      <PropertyRef Name="PackageWayDetailID" />
+    </Key>
+    <Property Name="PackageWayDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PackageID" Type="Int32" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="PackQty" Type="Int32" />
+    <NavigationProperty Name="tAllPackage" Relationship="Self.FK_tPackageWayDetail_tAllPackage" FromRole="tPackageWayDetail" ToRole="tAllPackage" />
+    <NavigationProperty Name="tOrder" Relationship="Self.FK_tPackageWayDetail_tOrder" FromRole="tPackageWayDetail" ToRole="tOrder" />
+  </EntityType>
+  <EntityType Name="tPay">
+    <Key>
+      <PropertyRef Name="PayID" />
+    </Key>
+    <Property Name="PayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="PayTypeID" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="tPayType" Relationship="Self.FK_tPay_tPayType" FromRole="tPay" ToRole="tPayType" />
+  </EntityType>
+  <EntityType Name="tPayType">
+    <Key>
+      <PropertyRef Name="PayTypeID" />
+    </Key>
+    <Property Name="PayTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PayKind" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PayTypeNo" Type="Int32" />
+    <Property Name="PayTypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PayTypeImagePath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tPays" Relationship="Self.FK_tPay_tPayType" FromRole="tPayType" ToRole="tPay" />
+  </EntityType>
+  <EntityType Name="tProduct">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Stocks" Type="Int32" />
+    <Property Name="LabelID" Type="Int32" />
+    <Property Name="SubCategoryID" Type="Int32" />
+    <Property Name="ProductPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ActiveID" Type="Int32" />
+    <Property Name="LaunchTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="tActive" Relationship="Self.FK_tProduct_tActive" FromRole="tProduct" ToRole="tActive" />
+    <NavigationProperty Name="tCarts" Relationship="Self.FK_tCart_tProduct" FromRole="tProduct" ToRole="tCart" />
+    <NavigationProperty Name="tKeywords" Relationship="Self.FK_tKeyword_tProduct" FromRole="tProduct" ToRole="tKeyword" />
+    <NavigationProperty Name="tLabel" Relationship="Self.FK_tLabel_tProduct" FromRole="tProduct" ToRole="tLabel" />
+    <NavigationProperty Name="tProdAppearances" Relationship="Self.FK_tProdAppearance_tProduct" FromRole="tProduct" ToRole="tProdAppearance" />
+    <NavigationProperty Name="tSubCategory" Relationship="Self.FK_tProduct_tSubCategory" FromRole="tProduct" ToRole="tSubCategory" />
+    <NavigationProperty Name="tPurchases" Relationship="Self.FK_tPurchase_tProduct" FromRole="tProduct" ToRole="tPurchase" />
+    <NavigationProperty Name="tReviews" Relationship="Self.FK_tReview_tProduct" FromRole="tProduct" ToRole="tReview" />
+  </EntityType>
+  <EntityType Name="tPurchase">
+    <Key>
+      <PropertyRef Name="PurchaseID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Memo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PurchaseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tOrder" Relationship="Self.FK_tPurchase_tOrder" FromRole="tPurchase" ToRole="tOrder" />
+    <NavigationProperty Name="tProduct" Relationship="Self.FK_tPurchase_tProduct" FromRole="tPurchase" ToRole="tProduct" />
+  </EntityType>
+  <EntityType Name="tReview">
+    <Key>
+      <PropertyRef Name="ReviewID" />
+    </Key>
+    <Property Name="ReviewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="RankID" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ReviewDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PurchaseID" Type="Int32" />
+    <NavigationProperty Name="tAppraisal" Relationship="Self.FK_tReview_tAppraisal" FromRole="tReview" ToRole="tAppraisal" />
+    <NavigationProperty Name="tMember" Relationship="Self.FK_tReview_tMember" FromRole="tReview" ToRole="tMember" />
+    <NavigationProperty Name="tProduct" Relationship="Self.FK_tReview_tProduct" FromRole="tReview" ToRole="tProduct" />
+  </EntityType>
+  <EntityType Name="tSale">
+    <Key>
+      <PropertyRef Name="SalesID" />
+    </Key>
+    <Property Name="SalesID" Type="Int32" Nullable="false" />
+    <Property Name="LabelID" Type="Int32" />
+    <Property Name="AgencyID" Type="Int32" />
+    <Property Name="DistribuatorID" Type="Int32" />
+    <NavigationProperty Name="tAgency" Relationship="Self.FK_tSales_tAgency" FromRole="tSales" ToRole="tAgency" />
+    <NavigationProperty Name="tDistributor" Relationship="Self.FK_tSales_tDistributor" FromRole="tSales" ToRole="tDistributor" />
+    <NavigationProperty Name="tLabel" Relationship="Self.FK_tSales_tLabel" FromRole="tSales" ToRole="tLabel" />
+  </EntityType>
+  <EntityType Name="tStatu">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tOrders" Relationship="Self.FK_tOrder_tStatus" FromRole="tStatus" ToRole="tOrder" />
+  </EntityType>
+  <EntityType Name="tSubCategory">
+    <Key>
+      <PropertyRef Name="SubCategoryID" />
+    </Key>
+    <Property Name="SubCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubCategoryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SubCategoryCName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryID" Type="Int32" />
+    <NavigationProperty Name="tCategory" Relationship="Self.FK_tSubCategory_tCategory" FromRole="tSubCategory" ToRole="tCategory" />
+    <NavigationProperty Name="tProducts" Relationship="Self.FK_tProduct_tSubCategory" FromRole="tSubCategory" ToRole="tProduct" />
+  </EntityType>
+  <EntityType Name="tCity">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tProdAppearance">
+    <Key>
+      <PropertyRef Name="PAppearanceID" />
+    </Key>
+    <Property Name="PAppearanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductID" Type="Int32" />
+    <NavigationProperty Name="tProduct" Relationship="Self.FK_tProdAppearance_tProduct" FromRole="tProdAppearance" ToRole="tProduct" />
+  </EntityType>
+  <Association Name="FK_Bags_GiftPackageStyle1">
+    <End Role="GiftPackageStyle" Type="Self.GiftPackageStyle" Multiplicity="0..1" />
+    <End Role="Bags" Type="Self.Bag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiftPackageStyle">
+        <PropertyRef Name="PStlyeID" />
+      </Principal>
+      <Dependent Role="Bags">
+        <PropertyRef Name="PStlyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bags_packageMaterial1">
+    <End Role="packageMaterial" Type="Self.packageMaterial" Multiplicity="0..1" />
+    <End Role="Bags" Type="Self.Bag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="packageMaterial">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="Bags">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Boxes_GiftPackageStyle1">
+    <End Role="GiftPackageStyle" Type="Self.GiftPackageStyle" Multiplicity="0..1" />
+    <End Role="Boxes" Type="Self.Box" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiftPackageStyle">
+        <PropertyRef Name="PStlyeID" />
+      </Principal>
+      <Dependent Role="Boxes">
+        <PropertyRef Name="PStlyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Boxes_packageMaterial1">
+    <End Role="packageMaterial" Type="Self.packageMaterial" Multiplicity="0..1" />
+    <End Role="Boxes" Type="Self.Box" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="packageMaterial">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="Boxes">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cards_GiftPackageStyle1">
+    <End Role="GiftPackageStyle" Type="Self.GiftPackageStyle" Multiplicity="0..1" />
+    <End Role="Cards" Type="Self.Card" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiftPackageStyle">
+        <PropertyRef Name="PStlyeID" />
+      </Principal>
+      <Dependent Role="Cards">
+        <PropertyRef Name="PStlyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDistrict_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="tDistrict" Type="Self.tDistrict" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="tDistrict">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tAllPackage_GiftPackageStyle1">
+    <End Role="GiftPackageStyle" Type="Self.GiftPackageStyle" Multiplicity="0..1" />
+    <End Role="tAllPackage" Type="Self.tAllPackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiftPackageStyle">
+        <PropertyRef Name="PStlyeID" />
+      </Principal>
+      <Dependent Role="tAllPackage">
+        <PropertyRef Name="PackageStyleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_packageMaterial_MaterialColor">
+    <End Role="MaterialColor" Type="Self.MaterialColor" Multiplicity="0..1" />
+    <End Role="packageMaterial" Type="Self.packageMaterial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialColor">
+        <PropertyRef Name="ColorID" />
+      </Principal>
+      <Dependent Role="packageMaterial">
+        <PropertyRef Name="ColorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tAllPackage_packageMaterial">
+    <End Role="packageMaterial" Type="Self.packageMaterial" Multiplicity="0..1" />
+    <End Role="tAllPackage" Type="Self.tAllPackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="packageMaterial">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="tAllPackage">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tProduct_tActive">
+    <End Role="tActive" Type="Self.tActive" Multiplicity="0..1" />
+    <End Role="tProduct" Type="Self.tProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tActive">
+        <PropertyRef Name="ActiveID" />
+      </Principal>
+      <Dependent Role="tProduct">
+        <PropertyRef Name="ActiveID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tAgency_tEnterprise">
+    <End Role="tEnterprise" Type="Self.tEnterprise" Multiplicity="0..1" />
+    <End Role="tAgency" Type="Self.tAgency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tEnterprise">
+        <PropertyRef Name="EnterpriseID" />
+      </Principal>
+      <Dependent Role="tAgency">
+        <PropertyRef Name="EnterpriseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tSales_tAgency">
+    <End Role="tAgency" Type="Self.tAgency" Multiplicity="0..1" />
+    <End Role="tSales" Type="Self.tSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tAgency">
+        <PropertyRef Name="AgencyID" />
+      </Principal>
+      <Dependent Role="tSales">
+        <PropertyRef Name="AgencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPackageWayDetail_tAllPackage">
+    <End Role="tAllPackage" Type="Self.tAllPackage" Multiplicity="0..1" />
+    <End Role="tPackageWayDetail" Type="Self.tPackageWayDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tAllPackage">
+        <PropertyRef Name="PackageID" />
+      </Principal>
+      <Dependent Role="tPackageWayDetail">
+        <PropertyRef Name="PackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tReview_tAppraisal">
+    <End Role="tAppraisal" Type="Self.tAppraisal" Multiplicity="0..1" />
+    <End Role="tReview" Type="Self.tReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tAppraisal">
+        <PropertyRef Name="RankID" />
+      </Principal>
+      <Dependent Role="tReview">
+        <PropertyRef Name="RankID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tCart_tMember">
+    <End Role="tMember" Type="Self.tMember" Multiplicity="0..1" />
+    <End Role="tCart" Type="Self.tCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tMember">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="tCart">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tCart_tProduct">
+    <End Role="tProduct" Type="Self.tProduct" Multiplicity="0..1" />
+    <End Role="tCart" Type="Self.tCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tProduct">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tCart">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tSubCategory_tCategory">
+    <End Role="tCategory" Type="Self.tCategory" Multiplicity="0..1" />
+    <End Role="tSubCategory" Type="Self.tSubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="tSubCategory">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tEmployee_Department">
+    <End Role="tDepartment" Type="Self.tDepartment" Multiplicity="0..1" />
+    <End Role="tEmployee" Type="Self.tEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDepartment">
+        <PropertyRef Name="DepID" />
+      </Principal>
+      <Dependent Role="tEmployee">
+        <PropertyRef Name="DepID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDistributor_tEnterprise">
+    <End Role="tEnterprise" Type="Self.tEnterprise" Multiplicity="0..1" />
+    <End Role="tDistributor" Type="Self.tDistributor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tEnterprise">
+        <PropertyRef Name="EnterpriseID" />
+      </Principal>
+      <Dependent Role="tDistributor">
+        <PropertyRef Name="EnterpriseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tSales_tDistributor">
+    <End Role="tDistributor" Type="Self.tDistributor" Multiplicity="0..1" />
+    <End Role="tSales" Type="Self.tSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDistributor">
+        <PropertyRef Name="DistributorID" />
+      </Principal>
+      <Dependent Role="tSales">
+        <PropertyRef Name="DistribuatorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventLog_tEmployee">
+    <End Role="tEmployee" Type="Self.tEmployee" Multiplicity="0..1" />
+    <End Role="tEventLog" Type="Self.tEventLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tEmployee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="tEventLog">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tKeyword_tProduct">
+    <End Role="tProduct" Type="Self.tProduct" Multiplicity="0..1" />
+    <End Role="tKeyword" Type="Self.tKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tProduct">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tKeyword">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tLabel_tProduct">
+    <End Role="tProduct" Type="Self.tProduct" Multiplicity="1" />
+    <End Role="tLabel" Type="Self.tLabel" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tProduct">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tLabel">
+        <PropertyRef Name="LabelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tSales_tLabel">
+    <End Role="tLabel" Type="Self.tLabel" Multiplicity="0..1" />
+    <End Role="tSales" Type="Self.tSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tLabel">
+        <PropertyRef Name="LabelID" />
+      </Principal>
+      <Dependent Role="tSales">
+        <PropertyRef Name="LabelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tOrder_tMember">
+    <End Role="tMember" Type="Self.tMember" Multiplicity="0..1" />
+    <End Role="tOrder" Type="Self.tOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tMember">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="tOrder">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tReview_tMember">
+    <End Role="tMember" Type="Self.tMember" Multiplicity="0..1" />
+    <End Role="tReview" Type="Self.tReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tMember">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="tReview">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tOrder_tStatus">
+    <End Role="tStatus" Type="Self.tStatu" Multiplicity="0..1" />
+    <End Role="tOrder" Type="Self.tOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="tOrder">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPackageWayDetail_tOrder">
+    <End Role="tOrder" Type="Self.tOrder" Multiplicity="0..1" />
+    <End Role="tPackageWayDetail" Type="Self.tPackageWayDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tOrder">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="tPackageWayDetail">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPurchase_tOrder">
+    <End Role="tOrder" Type="Self.tOrder" Multiplicity="1" />
+    <End Role="tPurchase" Type="Self.tPurchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tOrder">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="tPurchase">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPay_tPayType">
+    <End Role="tPayType" Type="Self.tPayType" Multiplicity="0..1" />
+    <End Role="tPay" Type="Self.tPay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPayType">
+        <PropertyRef Name="PayTypeID" />
+      </Principal>
+      <Dependent Role="tPay">
+        <PropertyRef Name="PayTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tProdAppearance_tProduct">
+    <End Role="tProduct" Type="Self.tProduct" Multiplicity="0..1" />
+    <End Role="tProdAppearance" Type="Self.tProdAppearance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tProduct">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tProdAppearance">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tProduct_tSubCategory">
+    <End Role="tSubCategory" Type="Self.tSubCategory" Multiplicity="0..1" />
+    <End Role="tProduct" Type="Self.tProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tSubCategory">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="tProduct">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPurchase_tProduct">
+    <End Role="tProduct" Type="Self.tProduct" Multiplicity="0..1" />
+    <End Role="tPurchase" Type="Self.tPurchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tProduct">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tPurchase">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tReview_tProduct">
+    <End Role="tProduct" Type="Self.tProduct" Multiplicity="0..1" />
+    <End Role="tReview" Type="Self.tReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tProduct">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tReview">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SelectShopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bags" EntityType="Self.Bag" />
+    <EntitySet Name="Boxes" EntityType="Self.Box" />
+    <EntitySet Name="Cards" EntityType="Self.Card" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="GiftPackageStyles" EntityType="Self.GiftPackageStyle" />
+    <EntitySet Name="MaterialColors" EntityType="Self.MaterialColor" />
+    <EntitySet Name="packageMaterials" EntityType="Self.packageMaterial" />
+    <EntitySet Name="tActives" EntityType="Self.tActive" />
+    <EntitySet Name="tAgencies" EntityType="Self.tAgency" />
+    <EntitySet Name="tAllPackages" EntityType="Self.tAllPackage" />
+    <EntitySet Name="tAppraisals" EntityType="Self.tAppraisal" />
+    <EntitySet Name="tCarts" EntityType="Self.tCart" />
+    <EntitySet Name="tCategories" EntityType="Self.tCategory" />
+    <EntitySet Name="tDepartments" EntityType="Self.tDepartment" />
+    <EntitySet Name="tDistributors" EntityType="Self.tDistributor" />
+    <EntitySet Name="tDistricts" EntityType="Self.tDistrict" />
+    <EntitySet Name="tEmployees" EntityType="Self.tEmployee" />
+    <EntitySet Name="tEnterprises" EntityType="Self.tEnterprise" />
+    <EntitySet Name="tEventLogs" EntityType="Self.tEventLog" />
+    <EntitySet Name="tKeywords" EntityType="Self.tKeyword" />
+    <EntitySet Name="tLabels" EntityType="Self.tLabel" />
+    <EntitySet Name="tMembers" EntityType="Self.tMember" />
+    <EntitySet Name="tOrders" EntityType="Self.tOrder" />
+    <EntitySet Name="tOrder_temp" EntityType="Self.tOrder_temp" />
+    <EntitySet Name="tPackageWayDetails" EntityType="Self.tPackageWayDetail" />
+    <EntitySet Name="tPays" EntityType="Self.tPay" />
+    <EntitySet Name="tPayTypes" EntityType="Self.tPayType" />
+    <EntitySet Name="tProducts" EntityType="Self.tProduct" />
+    <EntitySet Name="tPurchases" EntityType="Self.tPurchase" />
+    <EntitySet Name="tReviews" EntityType="Self.tReview" />
+    <EntitySet Name="tSales" EntityType="Self.tSale" />
+    <EntitySet Name="tStatus" EntityType="Self.tStatu" />
+    <EntitySet Name="tSubCategories" EntityType="Self.tSubCategory" />
+    <EntitySet Name="tCities" EntityType="Self.tCity" />
+    <EntitySet Name="tProdAppearances" EntityType="Self.tProdAppearance" />
+    <AssociationSet Name="FK_Bags_GiftPackageStyle1" Association="Self.FK_Bags_GiftPackageStyle1">
+      <End Role="GiftPackageStyle" EntitySet="GiftPackageStyles" />
+      <End Role="Bags" EntitySet="Bags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bags_packageMaterial1" Association="Self.FK_Bags_packageMaterial1">
+      <End Role="packageMaterial" EntitySet="packageMaterials" />
+      <End Role="Bags" EntitySet="Bags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Boxes_GiftPackageStyle1" Association="Self.FK_Boxes_GiftPackageStyle1">
+      <End Role="GiftPackageStyle" EntitySet="GiftPackageStyles" />
+      <End Role="Boxes" EntitySet="Boxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Boxes_packageMaterial1" Association="Self.FK_Boxes_packageMaterial1">
+      <End Role="packageMaterial" EntitySet="packageMaterials" />
+      <End Role="Boxes" EntitySet="Boxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cards_GiftPackageStyle1" Association="Self.FK_Cards_GiftPackageStyle1">
+      <End Role="GiftPackageStyle" EntitySet="GiftPackageStyles" />
+      <End Role="Cards" EntitySet="Cards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDistrict_City" Association="Self.FK_tDistrict_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="tDistrict" EntitySet="tDistricts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tAllPackage_GiftPackageStyle1" Association="Self.FK_tAllPackage_GiftPackageStyle1">
+      <End Role="GiftPackageStyle" EntitySet="GiftPackageStyles" />
+      <End Role="tAllPackage" EntitySet="tAllPackages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_packageMaterial_MaterialColor" Association="Self.FK_packageMaterial_MaterialColor">
+      <End Role="MaterialColor" EntitySet="MaterialColors" />
+      <End Role="packageMaterial" EntitySet="packageMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tAllPackage_packageMaterial" Association="Self.FK_tAllPackage_packageMaterial">
+      <End Role="packageMaterial" EntitySet="packageMaterials" />
+      <End Role="tAllPackage" EntitySet="tAllPackages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tProduct_tActive" Association="Self.FK_tProduct_tActive">
+      <End Role="tActive" EntitySet="tActives" />
+      <End Role="tProduct" EntitySet="tProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tAgency_tEnterprise" Association="Self.FK_tAgency_tEnterprise">
+      <End Role="tEnterprise" EntitySet="tEnterprises" />
+      <End Role="tAgency" EntitySet="tAgencies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tSales_tAgency" Association="Self.FK_tSales_tAgency">
+      <End Role="tAgency" EntitySet="tAgencies" />
+      <End Role="tSales" EntitySet="tSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPackageWayDetail_tAllPackage" Association="Self.FK_tPackageWayDetail_tAllPackage">
+      <End Role="tAllPackage" EntitySet="tAllPackages" />
+      <End Role="tPackageWayDetail" EntitySet="tPackageWayDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tReview_tAppraisal" Association="Self.FK_tReview_tAppraisal">
+      <End Role="tAppraisal" EntitySet="tAppraisals" />
+      <End Role="tReview" EntitySet="tReviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tCart_tMember" Association="Self.FK_tCart_tMember">
+      <End Role="tMember" EntitySet="tMembers" />
+      <End Role="tCart" EntitySet="tCarts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tCart_tProduct" Association="Self.FK_tCart_tProduct">
+      <End Role="tProduct" EntitySet="tProducts" />
+      <End Role="tCart" EntitySet="tCarts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tSubCategory_tCategory" Association="Self.FK_tSubCategory_tCategory">
+      <End Role="tCategory" EntitySet="tCategories" />
+      <End Role="tSubCategory" EntitySet="tSubCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tEmployee_Department" Association="Self.FK_tEmployee_Department">
+      <End Role="tDepartment" EntitySet="tDepartments" />
+      <End Role="tEmployee" EntitySet="tEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDistributor_tEnterprise" Association="Self.FK_tDistributor_tEnterprise">
+      <End Role="tEnterprise" EntitySet="tEnterprises" />
+      <End Role="tDistributor" EntitySet="tDistributors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tSales_tDistributor" Association="Self.FK_tSales_tDistributor">
+      <End Role="tDistributor" EntitySet="tDistributors" />
+      <End Role="tSales" EntitySet="tSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventLog_tEmployee" Association="Self.FK_EventLog_tEmployee">
+      <End Role="tEmployee" EntitySet="tEmployees" />
+      <End Role="tEventLog" EntitySet="tEventLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tKeyword_tProduct" Association="Self.FK_tKeyword_tProduct">
+      <End Role="tProduct" EntitySet="tProducts" />
+      <End Role="tKeyword" EntitySet="tKeywords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tLabel_tProduct" Association="Self.FK_tLabel_tProduct">
+      <End Role="tProduct" EntitySet="tProducts" />
+      <End Role="tLabel" EntitySet="tLabels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tSales_tLabel" Association="Self.FK_tSales_tLabel">
+      <End Role="tLabel" EntitySet="tLabels" />
+      <End Role="tSales" EntitySet="tSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tOrder_tMember" Association="Self.FK_tOrder_tMember">
+      <End Role="tMember" EntitySet="tMembers" />
+      <End Role="tOrder" EntitySet="tOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tReview_tMember" Association="Self.FK_tReview_tMember">
+      <End Role="tMember" EntitySet="tMembers" />
+      <End Role="tReview" EntitySet="tReviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tOrder_tStatus" Association="Self.FK_tOrder_tStatus">
+      <End Role="tStatus" EntitySet="tStatus" />
+      <End Role="tOrder" EntitySet="tOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPackageWayDetail_tOrder" Association="Self.FK_tPackageWayDetail_tOrder">
+      <End Role="tOrder" EntitySet="tOrders" />
+      <End Role="tPackageWayDetail" EntitySet="tPackageWayDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPurchase_tOrder" Association="Self.FK_tPurchase_tOrder">
+      <End Role="tOrder" EntitySet="tOrders" />
+      <End Role="tPurchase" EntitySet="tPurchases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPay_tPayType" Association="Self.FK_tPay_tPayType">
+      <End Role="tPayType" EntitySet="tPayTypes" />
+      <End Role="tPay" EntitySet="tPays" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tProdAppearance_tProduct" Association="Self.FK_tProdAppearance_tProduct">
+      <End Role="tProduct" EntitySet="tProducts" />
+      <End Role="tProdAppearance" EntitySet="tProdAppearances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tProduct_tSubCategory" Association="Self.FK_tProduct_tSubCategory">
+      <End Role="tSubCategory" EntitySet="tSubCategories" />
+      <End Role="tProduct" EntitySet="tProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPurchase_tProduct" Association="Self.FK_tPurchase_tProduct">
+      <End Role="tProduct" EntitySet="tProducts" />
+      <End Role="tPurchase" EntitySet="tPurchases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tReview_tProduct" Association="Self.FK_tReview_tProduct">
+      <End Role="tProduct" EntitySet="tProducts" />
+      <End Role="tReview" EntitySet="tReviews" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
