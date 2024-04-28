@@ -70,6 +70,7 @@ namespace 期中專案
             var v =
             from r in db.tReviews
             where r.ProductID == poid
+            orderby r.ReviewDate descending
             select r;
             int 去除預設 = 0; 
             foreach (var r in v)

@@ -1,7 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\wanks\\OneDrive\\\u684C\u9762\\date\u7DB2\u8DEF\u9078\u7269\u5546\u5E97beta\u7248\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\wanks\\OneDrive\\\u684C\u9762\\mdf\u7DB2\u8DEF\u9078\u7269\u5546\u5E97beta\u7248\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{695D5357-DCFA-4A5A-9952-FCC1C66BC61B}|\u671F\u4E2D\u5C08\u6848\\\u671F\u4E2D\u5C08\u6848.csproj|c:\\users\\wanks\\onedrive\\\u684C\u9762\\mdf\u7DB2\u8DEF\u9078\u7269\u5546\u5E97beta\u7248\\\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{695D5357-DCFA-4A5A-9952-FCC1C66BC61B}|\u671F\u4E2D\u5C08\u6848\\\u671F\u4E2D\u5C08\u6848.csproj|solutionrelative:\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{695D5357-DCFA-4A5A-9952-FCC1C66BC61B}|\u671F\u4E2D\u5C08\u6848\\\u671F\u4E2D\u5C08\u6848.csproj|c:\\users\\wanks\\onedrive\\\u684C\u9762\\mdf\u7DB2\u8DEF\u9078\u7269\u5546\u5E97beta\u7248\\\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{695D5357-DCFA-4A5A-9952-FCC1C66BC61B}|\u671F\u4E2D\u5C08\u6848\\\u671F\u4E2D\u5C08\u6848.csproj|solutionrelative:\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,15 +18,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u5546\u54C1\u8A73\u7D30.cs",
+              "DocumentMoniker": "C:\\Users\\wanks\\OneDrive\\\u684C\u9762\\mdf\u7DB2\u8DEF\u9078\u7269\u5546\u5E97beta\u7248\\\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs",
+              "RelativeDocumentMoniker": "\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs",
+              "ToolTip": "C:\\Users\\wanks\\OneDrive\\\u684C\u9762\\mdf\u7DB2\u8DEF\u9078\u7269\u5546\u5E97beta\u7248\\\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs",
+              "RelativeToolTip": "\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs",
+              "ViewState": "AQIAAHAAAAAAAAAAAAAAAEcAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T05:56:44.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "\u5546\u54C1\u8A73\u7D30.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\wanks\\OneDrive\\\u684C\u9762\\mdf\u7DB2\u8DEF\u9078\u7269\u5546\u5E97beta\u7248\\\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs",
+              "RelativeDocumentMoniker": "\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs",
+              "ToolTip": "C:\\Users\\wanks\\OneDrive\\\u684C\u9762\\mdf\u7DB2\u8DEF\u9078\u7269\u5546\u5E97beta\u7248\\\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "\u671F\u4E2D\u5C08\u6848\\\u5546\u54C1\u8A73\u7D30.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T05:56:43.505Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
             }
           ]
         }
