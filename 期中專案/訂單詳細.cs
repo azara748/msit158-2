@@ -141,6 +141,11 @@ namespace 期中專案
                     label5.Text = Convert.ToInt32(label5.Text) + (int)v4.總數 + "";
             label4.Text = Convert.ToInt32(Convert.ToInt32(label4.Text) * 0.8) + (int)v4.總價 + "";
         }
+                else
+            {
+                label5.Text = Convert.ToInt32(label5.Text)+"";
+                label4.Text = Convert.ToInt32(Convert.ToInt32(label4.Text) * 0.8)+"";
+            }
         }
     }
 }
