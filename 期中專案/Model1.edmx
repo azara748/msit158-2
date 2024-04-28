@@ -108,7 +108,7 @@
             <PropertyRef Name="PackageID" />
           </Key>
           <Property Name="PackageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PackName" Type="varchar" MaxLength="50" />
+          <Property Name="PackName" Type="nvarchar" MaxLength="50" />
           <Property Name="Price" Type="money" />
           <Property Name="Picture" Type="varchar(max)" />
           <Property Name="PackageStyleID" Type="int" />
@@ -141,7 +141,7 @@
           <Property Name="CategoryCName" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\DATE網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.tCity' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\MDF網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.tCity' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
         <EntityType Name="tCity">
           <Key>
             <PropertyRef Name="CityID" />
@@ -300,7 +300,7 @@
           <Property Name="PayTypeImagePath" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\DATE網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.tProdAppearance' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\MDF網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.tProdAppearance' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
         <EntityType Name="tProdAppearance">
           <Key>
             <PropertyRef Name="PAppearanceID" />
@@ -375,7 +375,7 @@
           <Property Name="CategoryID" Type="int" />
         </EntityType>
         <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\DATE網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.PRODUCT_TOP4_SALES' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+警告 6013: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\MDF網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.PRODUCT_TOP4_SALES' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
         <EntityType Name="PRODUCT_TOP4_SALES">
           <Property Name="ProductID" Type="int" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="200" />
@@ -384,7 +384,7 @@
           <Property Name="SalesMonth" Type="int" />
         </EntityType>-->
         <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\DATE網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.PRODUCT_TOTAL_SALES' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+警告 6013: 資料表/檢視 'C:\USERS\WANKS\ONEDRIVE\桌面\MDF網路選物商店BETA版\期中專案\DATABASE1.MDF.dbo.PRODUCT_TOTAL_SALES' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
         <EntityType Name="PRODUCT_TOTAL_SALES">
           <Property Name="ProductID" Type="int" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="200" />
@@ -1114,7 +1114,7 @@
             <PropertyRef Name="PackageID" />
           </Key>
           <Property Name="PackageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PackName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PackName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="PackageStyleID" Type="Int32" />

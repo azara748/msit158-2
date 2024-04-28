@@ -121,7 +121,7 @@
       <PropertyRef Name="PackageID" />
     </Key>
     <Property Name="PackageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PackName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PackName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="PackageStyleID" Type="Int32" />
